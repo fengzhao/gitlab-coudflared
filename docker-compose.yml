@@ -1,0 +1,40 @@
+version: "3.7"
+services:
+  gitlab:
+    image: 'gitlab/gitlab-ce:latest'
+    container_name: gitlab
+    restart: unless-stopped
+    hostname: 'gitlab.fengzhao.work'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: | 
+        # gitlab对外的域名，容器内用80端口
+        external_url 'http://gitlab.fengzhao.work'
+        # gitlab-registry对外的域名，容器内用80端口
+        registry_external_url "http://registry.fengzhao.work"
+    ports:
+      # 宿主机端口:容器端口
+      - '8484:80'
+      - '8585:443'
+      - '2323:22'
+        
+    volumes:
+      - '$GITLAB_HOME/config:/etc/gitlab'
+      - '$GITLAB_HOME/logs:/var/log/gitlab'
+      - '$GITLAB_HOME/data:/var/opt/gitlab'
+    networks:
+      - gitlab
+
+  gitlab-runner:
+    image: gitlab/gitlab-runner:alpine
+    container_name: gitlab-runner
+    restart: unless-stopped
+    depends_on:
+      - gitlab
+    volumes:
+      - '/volume1/scripts/docker/gitlab/gitlab-runner:/etc/gitlab-runner'
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - gitlab
+
+networks:
+  gitlab:
