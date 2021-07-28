@@ -6,11 +6,15 @@ services:
     restart: unless-stopped
     hostname: 'gitlab.fengzhao.work'
     environment:
+      # 容器用东八时区
+      TZ: Asia/Shanghai
       GITLAB_OMNIBUS_CONFIG: | 
-        # gitlab对外的域名，容器内用80端口
+      # gitlab对外的域名，容器内用80端口
         external_url 'http://gitlab.fengzhao.work'
-        # gitlab-registry对外的域名，容器内用80端口
+      # gitlab-registry对外的域名，容器内用80端口
         registry_external_url "http://registry.fengzhao.work"
+      # gitlab用东八时区  
+        gitlab_rails['time_zone'] = 'Asia/Shanghai'
     ports:
       # 宿主机端口:容器端口
       - '8484:80'
