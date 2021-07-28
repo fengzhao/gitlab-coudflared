@@ -1,0 +1,9 @@
+tunnel: f18ec6ed-edf0-48ef-933a-b3d6d1b983cf
+credentials-file: /root/.cloudflared/f18ec6ed-edf0-48ef-933a-b3d6d1b983cf.json
+
+ingress:
+  - hostname: wiki.fengzhao.ml
+    service: http://localhost:8090
+  - hostname: ssh.fengzhao.ml
+    service: ssh://localhost:22
+  - service: http_status:404
