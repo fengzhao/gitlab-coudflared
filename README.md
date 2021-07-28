@@ -52,6 +52,18 @@ cloudflared tunnel list
 
 # 为当前tunnel配置映射
 
-
+# 注册成服务
+sudo cloudflared service install
+# 配置
+wget https://raw.githubusercontent.com/fengzhao/gitlab-coudflared/main/config.yml -O /etc/cloudflared/config.yml
+# 启动
+sudo systemctl start cloudflared
+# 开机自启
+sudo systemctl start cloudflared
 # 
+
+####################################域名配置########################################
+
+# 登录cf控制台，选择域名，添加一条cname记录：gitlab.example.com  uuid.cfargotunnel.com(注意替换成实际的uuid)
+
 ```
