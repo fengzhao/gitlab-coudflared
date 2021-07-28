@@ -10,9 +10,9 @@ services:
       TZ: Asia/Shanghai
       GITLAB_OMNIBUS_CONFIG: | 
       # gitlab对外的域名，容器内用80端口
-        external_url 'http://gitlab.fengzhao.work'
+        external_url 'http://gitlab.example.com'
       # gitlab-registry对外的域名，容器内用80端口
-        registry_external_url "http://registry.fengzhao.work"
+        registry_external_url "http://registry.example.com"
       # gitlab用东八时区  
         gitlab_rails['time_zone'] = 'Asia/Shanghai'
     ports:
