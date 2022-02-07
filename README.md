@@ -1,3 +1,22 @@
+# gitlab 简介
+
+GitLab是利用Ruby on Rails一个开源的版本管理系统，实现一个自托管的Git项目仓库，可通过Web界面进行访问公开的或者私人项目。
+
+Gitlab 不单单是一个代码托管的 VCS 版本控制系统，其他例如 CI/CD Pipelie，Wiki，Issue Tracking，Kanban 等等都是极少数人所知，但却可以极大提高软件的开发效率及部署效率的。
+
+GitLab 分为两个版本，GitLab CE（社区版）及 GitLab EE（企业版），其中 GitLab CE 为 MIT 许可证可以免费进行使用，而 GitLab EE 则为在 GitLab CE 的版本上增强了许多功能，但需要进行付费使用。
+
+无论是 GitLab CE 或者 GitLab EE 都可以选择自行托管私服务器私有部署，或者是可以直接选择 gitlab.com 的 SaaS 服务，gitlab.com 目前也提供免费的套餐，有需要的话可以随时进行升级计划。
+
+omnibus方式即是通过gitlab提供的一个打包好的文件（将gitlab的所有服务打包在一起），通过类似一键似的安装来完成gitlab-ce企业私有代码库的安装，也是安装最省力的方式。
+
+
+
+```shell
+docker pull gitlab/gitlab-ce
+
+```
+
 # gitlab-coudflared
 
 ## 使用cloudflare将内网的gitlab穿透到公网
