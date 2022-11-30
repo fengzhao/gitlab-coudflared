@@ -8,7 +8,7 @@ GitLab 分为两个版本，GitLab CE（社区版）及 GitLab EE（企业版）
 
 无论是 GitLab CE 或者 GitLab EE 都可以选择自行托管私服务器私有部署，或者是可以直接选择 gitlab.com 的 SaaS 服务，gitlab.com 目前也提供免费的套餐，有需要的话可以随时进行升级计划。
 
-omnibus方式即是通过gitlab提供的一个打包好的文件（将gitlab的所有服务打包在一起），通过类似一键似的安装来完成gitlab-ce企业私有代码库的安装，也是安装最省力的方式。
+omnibus方式即是通过gitlab提供的一个打包好的文件（将gitlab的所有服务打包在一起），通过类似一键安装来完成gitlab-ce企业私有代码库的安装，也是安装最省力的方式。
 
 
 
