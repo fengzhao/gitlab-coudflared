@@ -28,14 +28,18 @@ docker pull gitlab/gitlab-ce
 
 ###################################使用docker安装配置gitlab################################
 mkdir -p /srv/gitlab  && export GITLAB_HOME=/srv/gitlab
+
 # 下载docker-compose文件 
 wget https://raw.githubusercontent.com/fengzhao/gitlab-coudflared/main/docker-compose.yml
+
 # 启动gitlab的docker容器，注意将其中的域名替换成自己的域名
 docker-compose up -d 
+
 # 本地修改hosts文件，看看能否通过域名访问
 
 # 进入容器，准备修改root密码
 docker exec -it gitlab bash 
+
 # 进入gitlab控制台
 [root@gitlab ~]# gitlab-rails console production
 Loading production environment (Rails 4.2.8)
@@ -73,13 +77,16 @@ cloudflared tunnel list
 
 # 注册成服务
 sudo cloudflared service install
+
 # 配置
 wget https://raw.githubusercontent.com/fengzhao/gitlab-coudflared/main/config.yml -O /etc/cloudflared/config.yml
+
 # 启动
 sudo systemctl start cloudflared
+
 # 开机自启
 sudo systemctl start cloudflared
-# 
+ 
 
 ####################################域名配置########################################
 
