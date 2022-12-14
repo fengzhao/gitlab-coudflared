@@ -1,6 +1,6 @@
 # gitlab 简介
 
-GitLab是利用Ruby on Rails一个开源的版本管理系统，实现一个自托管的Git项目仓库，可通过Web界面进行访问公开的或者私人项目。
+GitLab是利用Ruby on Rails开发的一个开源的代码版本管理系统，实现一个自托管的Git项目仓库，可通过Web界面进行访问公开的或者私人项目。
 
 Gitlab 不单单是一个代码托管的 VCS 版本控制系统，其他例如 CI/CD Pipelie，Wiki，Issue Tracking，Kanban 等等都是极少数人所知，但却可以极大提高软件的开发效率及部署效率的。
 
