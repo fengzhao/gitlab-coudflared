@@ -6,17 +6,11 @@ services:
     restart: unless-stopped
     hostname: 'gitlab.fengzhao.work'
     environment:
-      # 容器用东八时区
       TZ: Asia/Shanghai
       GITLAB_OMNIBUS_CONFIG: | 
-      # gitlab对外的域名，容器内用80端口
         external_url 'http://gitlab.example.com'
-      # gitlab-registry对外的域名，容器内用80端口
         registry_external_url "http://registry.example.com"
-      # gitlab用东八时区  
         gitlab_rails['time_zone'] = 'Asia/Shanghai'
-        
-      # 邮件通知相关配置  
         gitlab_rails['smtp_enable'] = true
         gitlab_rails['smtp_address'] = "smtp.163.com"
         gitlab_rails['smtp_port'] = 25
@@ -25,7 +19,6 @@ services:
         gitlab_rails['smtp_domain'] = "163.com"
         gitlab_rails['smtp_authentication'] = "login"
         gitlab_rails['smtp_enable_starttls_auto'] = true
-        # 修改gitlab配置的发信人
         gitlab_rails['gitlab_email_from'] = "your_mail_address@163.com"
         user["git_user_email"] = "your_mail_address@163.com"
     ports:
